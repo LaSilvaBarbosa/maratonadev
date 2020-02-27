@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- HTML 
+    HYPERTEXT (texto que contém links)
+    -escrever um arquivo q possui links para outros documentos
+
+    MARKUP
+    texto conterá marcações
+    <tags>
+
+    LANGUAGE
+    linguagem
+    para se comunicar de certa maneira -> Sintaxe específica para escrita
+
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Doe Sangue! Doe vida</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--Conteudo do topo-->
+        <img src="/logo.png" class="logo" alt="Imagem DOE">
+        <h2>A sua doação importa</h2>
+        <p>Até 3 vidas com 1 doação</p>
+        <p>Mais de 38.000 doações são necessári as todos os dias.</p>
+        <p>Apenas 1,9% da população brasileira, doa sangue.</p>
+
+        <button>Quero ajudar!</button>
+    </header>
+    <section class="form hide">
+        <!--Formulario-->
+        <h2>Entre na lista de doadores</h2>
+        <form action="/" method="POST"> 
+           
+            <input 
+                type="text" 
+                name="name" 
+                placeholder="Nome Completo">
+            <input 
+                type="text" 
+                name="email" 
+                placeholder="E-mail">
+            <input 
+                type="text" 
+                name="blood" 
+                placeholder="Tipo Sanguíneo">
+
+            <button>Quero Ajudar</button>
+        </form>
+    </section>
+    <main>
+        <!--Conteudo central-->
+        <h2>Últimos <span>doadores</span></h2>
+        <section class="donors">
+
+        
+            {% for donor in donors %}
+            <div class="donor">
+                 <div class="blood">{{donor.blood}}</div>
+                 <p>{{donor.name}}</p>
+            </div>
+            {%endfor%}
+            
+        </section>  
+    </main>
+    <footer>
+        <!--Rodape-->
+       <p>Com amor Rocketseat </p> 
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
